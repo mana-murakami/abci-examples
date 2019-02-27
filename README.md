@@ -9,5 +9,10 @@ $ ./install_horovod.sh
 
 2. run mnist example using qsub
 ```
-$ ./launch_batch.sh gaa50123 rt_F=4 examples/keras_mnist
+$ ./launch_batch.sh gaa50123 rt_F=4 examples/keras_mnist/run.sh
+```
+
+3. run mnist example with nvprof using qsub
+```
+$ ./launch_batch.sh gaa50123 rt_F=4 examples/keras_mnist/run_nvprof.sh
 ```
