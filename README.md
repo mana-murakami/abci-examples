@@ -1,6 +1,13 @@
+tf examples for abci hackathon
+
+
+1. install tensorflow keras horovod
 ```
-$ git clone https://github.com/ohtaman/abci-examples.git
-$ cd abci-examples/examples/horovod/keras
-$ ./install.sh
-$ qsub -g <your_group_id> job.sh
+$ ./launch_interactive.sh [group id]
+$ ./install_horovod.sh
+```
+
+2. run mnist example using qsub
+```
+$ ./launch_batch.sh gaa50123 rt_F=4 examples/keras_mnist
 ```
