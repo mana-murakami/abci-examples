@@ -37,7 +37,6 @@ img_rows, img_cols = 28, 28
 # The data, shuffled and split between train and test sets
 
 with cupy.prof.time_range('start load mnist data', color_id=0, sync=True):
-    cuda.nvtx.RangePush("load mnist data")
     (x_train, y_train), (x_test, y_test) = mnist.load_data()
     
     x_train = x_train.reshape(x_train.shape[0], img_rows, img_cols, 1)
@@ -52,9 +51,6 @@ with cupy.prof.time_range('start load mnist data', color_id=0, sync=True):
         print('x_train shape:', x_train.shape)
         print(x_train.shape[0], 'train samples')
         print(x_test.shape[0], 'test samples')
-
-    cuda.nvtx.RangePop()
-
 
 # Convert class vectors to binary class matrices
 y_train = keras.utils.to_categorical(y_train, num_classes)
